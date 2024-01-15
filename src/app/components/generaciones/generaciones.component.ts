@@ -1,9 +1,10 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-generaciones', 
-    template: '<div><p>Este es el componente generaciones</p></div>' 
+  selector: 'app-generaciones',
+  templateUrl: './generaciones.component.html',
+  styleUrls: ['./generaciones.component.css']
 })
 
-export class GeneracionesComponent{}
+export class GeneracionesComponent { }
 
