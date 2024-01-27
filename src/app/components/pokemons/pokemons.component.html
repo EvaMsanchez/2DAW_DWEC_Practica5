@@ -1,4 +1,29 @@
-<p>Este es el componente pokemons.</p>
+<div class="container">
+    <h2>Los personajes que tenemos en el array:</h2>
+    <br>
+    <br>
+    <div class="columns">
+        <div class="column">
+            <p>En el orden del array:</p>
+        </div>
+    </div>
 
-
+    <div class="columns is-multiline">
+        <ul class="menu-list column is-one-third" *ngFor="let pokemon of pokemons">
+            <li>
+                <ul class="menu-list">
+                    <img src="{{pokemon.imagen}}"/>
+                    <li>Nombre: {{pokemon.nombre}}</li>
+                    <li>Categoria: {{pokemon.categoria}}</li>
+                    <li>Tipo: {{pokemon.tipo}}</li>
+                    <li>Talla: <span *ngIf="pokemon.talla; else na">
+                        {{pokemon.talla | number:'1.0-1': 'es'}} m</span></li>
+                    <li>Peso: <span *ngIf="pokemon.peso; else na">
+                        {{pokemon.peso | number:'1.0-1': 'es'}} Kg</span></li>   
+                    <ng-template #na>N/A</ng-template> 
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>    
 
