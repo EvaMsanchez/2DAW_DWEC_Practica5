@@ -11,14 +11,13 @@ import { FormBuscarPersonaje } from 'src/app/models/form-buscar-personaje';
 export class PokemonsComponent implements OnInit{
 
   pokemonSeleccionado = '';
-
   pokemons = [{'id': 0, 'nombre': '', 'imagen': '', 'categoria': '', 'tipo': '', 
                'talla': 0, 'peso': 0}];
  
   cuenta = 0;
 
   formBuscarPersonaje = new FormBuscarPersonaje("");
-
+  
   constructor(private servicePokemons: PokemonsService) {}
 
   ngOnInit() {
@@ -26,9 +25,9 @@ export class PokemonsComponent implements OnInit{
     this.cuenta = this.servicePokemons.contarPokemons();
   }
 
-  buscar(nombreDelPersonaje: string) 
+  buscar(nombreDelPokemon: string) 
   {
-    this.pokemons = this.servicePokemons.buscarPersonaje(nombreDelPersonaje);
+    this.pokemons = this.servicePokemons.buscarPokemon(nombreDelPokemon);
   }
 
   cancelarBuscar() 

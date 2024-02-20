@@ -33,9 +33,10 @@ export class PokemonsService {
     return this.pokemons.length;
   }
 
-  buscarPersonaje(nombreDelPersonaje: string) 
+  buscarPokemon(nombreDelPokemon: string) 
   {
-    let regex = new RegExp(nombreDelPersonaje, 'gi');
+    let regex = new RegExp(nombreDelPokemon, 'gi');
     return this.pokemons.filter(personaje => personaje.nombre.match(regex));
   }
 }
+
